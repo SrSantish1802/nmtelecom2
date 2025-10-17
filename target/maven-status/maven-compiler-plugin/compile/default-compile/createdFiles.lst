@@ -1,0 +1,17 @@
+com\utp\nmtelecom\JakartaRestConfiguration.class
+com\utp\nmtelecom\dao\IProductoDAO.class
+com\utp\nmtelecom\dao\Conexion.class
+com\utp\nmtelecom\controller\RegistroServlet.class
+com\utp\nmtelecom\dao\ProductoDAO.class
+com\utp\nmtelecom\util\DatabaseConnection.class
+com\utp\nmtelecom\controller\LogoutServlet.class
+com\utp\nmtelecom\model\Producto.class
+com\utp\nmtelecom\controller\CarritoServlet.class
+com\utp\nmtelecom\dao\CarritoDAO.class
+com\utp\nmtelecom\model\Usuario.class
+com\utp\nmtelecom\controller\LoginServlet.class
+com\utp\nmtelecom\Main.class
+com\utp\nmtelecom\model\ItemCarrito.class
+com\utp\nmtelecom\controller\CatalogoServlet.class
+com\utp\nmtelecom\resources\JakartaEE10Resource.class
+com\utp\nmtelecom\dao\UsuarioDAO.class
