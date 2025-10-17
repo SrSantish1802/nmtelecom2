@@ -46,13 +46,13 @@
             <version>3.0.1</version>
         </dependency>
 
-        <!-- Expression Language (necesario para JSP) -->
-<dependency>
-    <groupId>org.glassfish</groupId>
-    <artifactId>jakarta.el</artifactId>
-    <version>5.0.0-M1</version>
-    <scope>compile</scope>
-</dependency>
+        <!-- Expression Language (para JSP) -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>5.0.0-M1</version>
+            <scope>compile</scope>
+        </dependency>
 
         <!-- MySQL -->
         <dependency>
@@ -74,7 +74,7 @@
             <version>0.0.20131108.vaadin1</version>
         </dependency>
 
-        <!-- Tomcat embebido (core + JSP + EL) -->
+        <!-- Tomcat embebido -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
@@ -95,6 +95,23 @@
     </dependencies>
 
     <build>
+        <!-- 📦 Copiar JSPs dentro del JAR -->
+        <resources>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <targetPath>webapp</targetPath>
+                <includes>
+                    <include>**/*.jsp</include>
+                    <include>**/*.html</include>
+                    <include>**/*.css</include>
+                    <include>**/*.js</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
         <plugins>
             <!-- Compilador -->
             <plugin>
@@ -107,7 +124,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Empaquetado en un jar ejecutable -->
+            <!-- Empaquetado en jar ejecutable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
