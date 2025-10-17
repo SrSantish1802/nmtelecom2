@@ -27,7 +27,14 @@ public class Main {
         tomcat.getConnector();
 
         // Directorio raíz del proyecto (carpeta webapp)
-        String webAppPath = new File("src/main/webapp").getAbsolutePath();
+        File webappDir = new File("target/classes/webapp");
+        if (!webappDir.exists()) {
+            // fallback para ejecución dentro del JAR
+            webappDir = new File(".");
+        }
+        tomcat.addWebapp("", webappDir.getAbsolutePath());
+        System.out.println("📂 Cargando webapp desde: " + webappDir.getAbsolutePath());
+
 
         // Agregar la aplicación web
         Context ctx = tomcat.addWebapp("", webAppPath);
@@ -51,3 +58,4 @@ public class Main {
         tomcat.getServer().await();
     }
 }
+
